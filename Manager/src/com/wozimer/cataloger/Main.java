@@ -10,5 +10,6 @@ public class Main {
         MainFrameFactory mainFrameFactory = new MainFrameFactory();
         Frame mainFrame = mainFrameFactory.createFrame();
         mainFrame.setVisible(true);
+
     }
 }

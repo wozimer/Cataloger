@@ -6,12 +6,14 @@ import java.awt.*;
 public class MainFrameFactory {
 
     public Frame createFrame() {
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Каталогизатор");
 
-        frame.setSize(200, 200);
+        frame.setContentPane(new MainFrame().$$$getRootComponent$$$());
+
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+
+        frame.pack();
         frame.setLocationRelativeTo(null);
-
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         return frame;
     }
