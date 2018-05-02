@@ -16,30 +16,41 @@
         <children>
           <component id="50edc" class="javax.swing.JButton" binding="startPointsButton">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
             <properties>
               <actionCommand value="startPointsWindow" noi18n="true"/>
+              <enabled value="false"/>
               <text value="Начала"/>
               <toolTipText value="Начальные точки"/>
             </properties>
           </component>
           <vspacer id="4f4ac">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
           </vspacer>
           <component id="52585" class="javax.swing.JButton" binding="exitButton" default-binding="true">
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
             <properties>
               <actionCommand value="exit" noi18n="true"/>
               <text value="Выход"/>
               <toolTipText value="Выход из приложения"/>
+            </properties>
+          </component>
+          <component id="d529f" class="javax.swing.JButton" binding="newFilesButton">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Разобрать"/>
+              <toolTipText value="Разобрать новые файлы и каталоги по категориям"/>
             </properties>
           </component>
         </children>
