@@ -7,7 +7,7 @@ import java.io.File;
 /**
  * Начальная точка категоризации.
  * <p>
- * Простоеописание места с которого проводится каталогизация.
+ * Простое описание места с которого проводится каталогизация.
  */
 public class StartPoint {
 
@@ -17,7 +17,7 @@ public class StartPoint {
     // как показываем пользователю
     private String description;
 
-    public StartPoint(File start, String description) {
+    StartPoint(File start, String description) {
         assert start != null;
         this.start = start;
         this.description = description;

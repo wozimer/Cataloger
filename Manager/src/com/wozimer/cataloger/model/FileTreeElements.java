@@ -8,13 +8,19 @@ import javax.swing.tree.TreePath;
 import java.io.File;
 import java.util.*;
 
+/**
+ * Модель элементов в файловой системе.
+ */
 public class FileTreeElements implements TreeModel, Elements {
 
+    // каталог, от которого идет категоризация
     @NotNull
     private final File rootDir;
+    // база для хранения сведений о категорий
     @NotNull
     private final CatalogDatabase database;
 
+    // кэш элементов
     private final Map<File, Element> elements = new HashMap<>();
 
     public FileTreeElements(@NotNull File rootDir, @NotNull CatalogDatabase database) {
@@ -134,8 +140,19 @@ public class FileTreeElements implements TreeModel, Elements {
         return categories.remove(category);
     }
 
-
-    private Element getElement(File file) {
+    /**
+     * Возвращает элемент для файла или каталога.
+     *
+     * Созданные элементы кешируются.
+     * Гарантируется возврат того же элемента из нескольких вызовов для одного файла.
+     *
+     * @param file файл/каталог
+     * @return элемент
+     */
+    @NotNull
+    private Element getElement(@NotNull File file) {
+        assert file != null;
+        assert file.getAbsolutePath().startsWith(rootDir.getAbsolutePath());
         Element element = elements.get(file);
         if (element == null) {
             element = new Element(file);
@@ -144,7 +161,15 @@ public class FileTreeElements implements TreeModel, Elements {
         return element;
     }
 
-    private List<Element> loadChildren(Element element) {
+    /**
+     * Подгружает список детей для элемента.
+     *
+     * @param element заполняемый элемент
+     * @return список детей элемента
+     */
+    @NotNull
+    private List<Element> loadChildren(@NotNull Element element) {
+        assert element != null;
         List<Element> children;
         children = new ArrayList<>();
         File[] files = element.getFile().listFiles();

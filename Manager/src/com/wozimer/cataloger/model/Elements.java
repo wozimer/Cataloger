@@ -16,10 +16,10 @@ public interface Elements {
     String displayName(Element element);
 
     /**
-     * Является ли элемент "новысм", не прошедшим каталогизацию.
+     * Является ли элемент "новым", не прошедшим каталогизацию.
      *
      * @param element проверяемый элемент
-     * @return {@code true} если ещё некаталогизировался.
+     * @return {@code true} если ещё не каталогизировался.
      */
     boolean isNew(Element element);
 
@@ -39,7 +39,21 @@ public interface Elements {
      */
     Set<Category> getAvailableCategories(Element element);
 
+    /**
+     * Добавляет элемент в категорию
+     *
+     * @param element элемент
+     * @param category категория
+     * @return {@code false} если список категорий элемента не был изменен
+     */
     boolean addCategory(Element element, Category category);
 
+    /**
+     * Убирает элемент из категории.
+     *
+     * @param element элемент
+     * @param category категория
+     * @return {@code false} если список категорий элемента не был изменен
+     */
     boolean removeCategory(Element element, Category category);
 }

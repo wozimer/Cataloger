@@ -17,11 +17,14 @@ public class Element {
     private final File file;
     // подгружаемые дети
     private List<Element> children;
+    // признак конечности элемента
     private boolean leafIsSet;
     private boolean leaf;
-    private String displayName;
+    // признак незаконченной каталогизации
     private boolean isNew;
     private boolean isNewSet;
+    // отображаемое имя элемента
+    private String displayName;
     // присвоенные категории
     private Set<Category> categories;
 
@@ -63,7 +66,7 @@ public class Element {
         this.displayName = displayName;
     }
 
-    public boolean newIsSet() {
+    boolean newIsSet() {
         return isNewSet;
     }
 
